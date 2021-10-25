@@ -1,0 +1,27 @@
+{
+  "extends": "../tsconfig",
+  "compilerOptions": {
+    "target": "es6",
+    "allowJs": false,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "baseUrl": "../types",
+    "rootDirs": [
+      ".",
+      "../lib"
+    ],
+    "typeRoots": [
+      "../node_modules/@types",
+      "../types"
+    ],
+    "outDir": "../test-js"
+  },
+  "include": [
+    "**/*"
+  ]
+}

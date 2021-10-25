@@ -1,0 +1,85 @@
+{
+  "name": "currency-rates",
+  "version": "1.0.0",
+  "description": "REST & GraphQL endpoints for the service providing currency rates.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:ci",
+    "build:ci": "tsc && tsc --project test",
+    "clean": "npm run clean:build && npm run clean:test",
+    "clean:build": "rimraf \"dist\" \"test-js\"",
+    "clean:test": "rimraf \".nyc_output\" \"coverage\"",
+    "licenses:crawl": "npm-license-crawler --csv licenses.csv",
+    "start": "nodemon -e ts --exec \"tsc && node ./dist/index.js\"",
+    "test": "LOG_LEVEL=OFF nyc mocha $NODE_DEBUG_OPTION --no-opts --no-config --exit",
+    "test:ci": "LOG_LEVEL=ALL nyc mocha $NODE_DEBUG_OPTION --no-opts --no-config --exit",
+    "watch": "tsc --watch"
+  },
+  "author": "Hitesh Songra",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/glue": "^8.0.0",
+    "@hapi/hapi": "^20.2.1",
+    "@hapi/inert": "^6.0.4",
+    "@hapi/vision": "^6.1.0",
+    "dotenv": "^10.0.0",
+    "hapi-openapi": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/chai-as-promised": "^7.1.4",
+    "@types/hapi__glue": "^6.1.4",
+    "@types/hapi__hapi": "^20.0.9",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.4",
+    "@types/sinon": "^10.0.5",
+    "@types/sinon-chai": "^3.2.5",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^9.1.3",
+    "nodemon": "^2.0.14",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "sinon": "^11.1.2",
+    "sinon-chai": "^3.7.0",
+    "source-map-support": "^0.5.20",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "mocha": {
+    "require": [
+      "ts-node/register",
+      "source-map-support/register",
+      "./test/test-helpers/index.ts"
+    ],
+    "recursive": true,
+    "full-trace": true,
+    "spec": "test/**/*.spec.ts"
+  },
+  "nyc": {
+    "include": [
+      "lib/**/*"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "lib/index.ts",
+      "lib/config.ts",
+      "**/test-helpers/**"
+    ],
+    "reporter": [
+      "text-summary",
+      "html",
+      "lcov"
+    ],
+    "all": true,
+    "sourceMap": true,
+    "instrument": true,
+    "check-coverage": true,
+    "lines": 70,
+    "statements": 70,
+    "functions": 65,
+    "branches": 60
+  }
+}

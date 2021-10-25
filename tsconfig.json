@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowUnreachableCode": false,
+    "alwaysStrict": true,
+    "baseUrl": "./types",
+    "experimentalDecorators": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "outDir": "dist",
+    "removeComments": false,
+    "resolveJsonModule": true,
+    "rootDirs": [
+      "lib"
+    ],
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es2015",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ]
+  },
+  "include": [
+    "lib/**/*",
+    "lib/**/*.json",
+    "index.ts"
+  ]
+}
