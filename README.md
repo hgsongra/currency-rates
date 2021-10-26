@@ -1,6 +1,5 @@
 # currency-rates
 REST APIs for currency rates 
-# scp-service-message-faults
 
 ## Establish environment variables (workstation installation)
 Copy the .env.example file with default/sample environment variables for development to .env.
