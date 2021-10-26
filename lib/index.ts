@@ -4,6 +4,7 @@ import { compose, Options as GlueOptions } from "@hapi/glue";
 import { Server } from "@hapi/hapi";
 
 import { ServerManifest } from "./config";
+import {scheduleCronJob} from "./modules/service/currency-cache";
 
 const glueOptions: GlueOptions = {
   relativeTo: `${__dirname}/modules`
@@ -22,6 +23,7 @@ export async function composeServer(): Promise<Server> {
 export async function start(): Promise<Server> {
   finalServer = await composeServer();
   await finalServer.start();
+  scheduleCronJob();
   console.log(`Server running @ ${finalServer.info.uri}`);
   return finalServer;
 }

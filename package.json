@@ -22,8 +22,10 @@
     "@hapi/hapi": "^20.2.1",
     "@hapi/inert": "^6.0.4",
     "@hapi/vision": "^6.1.0",
+    "axios": "^0.24.0",
     "dotenv": "^10.0.0",
-    "hapi-openapi": "^3.0.0"
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.22",
