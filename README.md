@@ -32,6 +32,17 @@ $ npm run test
 $ npm run test:ci
 ```
 
+
+And finally start the app
+```
+$ npm start
+```
+
+Go to the any rest client and hit the below endpoint to get the currency rates based on desired input(`base` and `target`)
+```
+$ http://localhost:3000/rates?base=USD&target=SGD
+```
+
 ## License
 
 Please see [LICENSE.md](LICENSE.md).
