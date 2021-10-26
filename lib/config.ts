@@ -5,6 +5,7 @@ export const ServerManifest: Manifest = {
     plugins: [
       "@hapi/inert",
       "@hapi/vision",
+      // NOTE: API Authorisation goes here using the JWT
       "./v1"
     ]
   },
